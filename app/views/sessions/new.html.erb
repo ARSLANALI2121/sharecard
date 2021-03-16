@@ -1,54 +1,8 @@
-<form class="container">
-  <div class="col-6">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text"></div>
-  </div>
-  <div class="col-6">
-    <label for="exampleInputPassword1" class="form-label">Username</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div><br>
-
-<div class="container">
-  <div class="row">
-    <div class="col-6 col-sm-3">
-    <label for="exampleInputPassword1" class="form-label">First Name</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="col-6 col-sm-3">
-    <label for="exampleInputPassword1" class="form-label">Last Name</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-
-    <!-- Force next columns to break to new line -->
-    <div class="w-100"></div>
-<br>
-<div class="col-6 col-sm-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-</div>
-<div class="col-6 col-sm-3">
-    <label for="exampleInputPassword1" class="form-label">Password Confirmation</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-</div>
-<div class="w-100"></div><br>
-<div class="col-6 col-sm-3">
-<label for="exampleInputPassword1" class="form-label">Phone Number</label>
-<input type="password" class="form-control" id="exampleInputPassword1">
-</div>
-<div class="col-6 col-sm-3">
-<label for="exampleInputPassword1" class="form-label">Company</label>
-<input type="password" class="form-control" id="exampleInputPassword1">
-</div>
-</div>
-</div>
-
-  <div class="mb-3 form-check">
-  
-  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  
-  
-  &nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary">Submit</button>
-</form
+<h1> Welcome to my page session page </h1>
+<%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+	<%= f.label :Username %>
+	<%= f.text_field :user_name, placeholder: 'User Name *' %>
+	<%= f.label :password %>
+	<%= f.password_field :password, class: 'form-control', placeholder: "Enter Password *" %>
+	<%= f.submit "Login" %>
+	<% end %>
