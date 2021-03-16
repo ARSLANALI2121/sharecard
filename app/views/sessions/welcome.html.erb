@@ -1,9 +1,10 @@
 Welcome to my welcome page in Sharde card app
 
-<% if logged_in? %> 
+<% if current_user %> 
   <p1>You are Logged In as, <%= current_user.user_name %></p1>
+  <%= link_to "Log Out", logout_path %>
+  <h1> Hello My loggin user </h1>
+  <% else %>
+  <%= link_to "Login", login_path %>
+  <%= link_to "Sign Up", '/users/new', method: :get %>
 <%end%>
-<%= link_to "Login", '/login', method: :get %>
-<%= link_to "Sign Up", '/users/new', method: :get %>
-<%= link_to "Sign Out", logout_path, method: :delete %>
-<%= link_to "Sign Up", '/users/new', method: :get %>
