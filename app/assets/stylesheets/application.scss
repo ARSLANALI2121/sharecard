@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-//@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
 //@import "_bootstrap";
 
 // .main { 
@@ -26,17 +26,17 @@
 // 	padding-left: 5px;
 // }
 
-
-
 .register{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
     margin-top: 5%;
     padding: 3%;
+    width: auto;
 }
 .register-left{
     text-align: center;
     color: #fff;
     margin-top: 4%;
+    margin-right: 200px;
 }
 .register-left input{
     border: none;
@@ -52,8 +52,12 @@
 }
 .register-right{
     background: #f8f9fa;
-    border-top-left-radius: 10% 50%;
-    border-bottom-left-radius: 10% 50%;
+    // border-top-left-radius: 10% 50%;
+    // border-top-right-radius: 10% 40%;
+    // border-bottom-right-radius: 10% 50%;
+    // border-bottom-left-radius: 10% 50%;
+    margin-right: 0px;
+
 }
 .register-left img{
     margin-top: 15%;
@@ -80,16 +84,17 @@
     margin-top: 10%;
 }
 .btnRegister{
-    float: right;
-    margin-top: 10%;
+    float: left;
+    margin-top: 3%;
     border: none;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     padding: 2%;
     background: #0062cc;
     color: #fff;
     font-weight: 600;
     width: 50%;
     cursor: pointer;
+    margin-left: 10px;
 }
 .register .nav-tabs{
     margin-top: 3%;
@@ -124,10 +129,25 @@
     color: #495057;
 }
 .check_box_size{
-width: 20px;
-height: 20px;
-margin-right: 10px;
-margin-left: 0px;
-margin-top: 2px;
+width: 15px;
+height: 15px;
+margin-right: 6px;
 
+
+}
+.label-class{
+    font-size: 14px;
+}
+.my-form {
+    width: 500px;
+    height: 400px;
+}
+
+.menu {
+    margin-left: 2px;
+    margin-top: 6px;
+}
+
+.btn-primary{
+    margin-left: 10px;
 }

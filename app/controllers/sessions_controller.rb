@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 #   before_action :logged_in_require, only: [:new, :create]
+  layout 'application'
   def new
 
 	end
