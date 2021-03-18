@@ -9,10 +9,10 @@ class UsersController < ApplicationController
 		@user= User.new(user_params)
 		if @user.save
 			#session[:user_id] = @user.id
-			#flash.now[:success]= "User was successfully created."
-			format.html { redirect_to @user, notice: "User was successfully created." }
-			format.json { render :show, status: :created, location: @user }
-			#redirect_to login_path
+			flash.now[:success]= "User was successfully created."
+			#format.html { redirect_to @user, notice: "User was successfully created." }
+			#format.json { render :show, status: :created, location: @user }
+			redirect_to login_path
 		else
 			flash[:errors] = "User was Not created. Please Check Your Information"
 			render 'new'
