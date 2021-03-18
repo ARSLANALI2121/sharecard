@@ -5,6 +5,8 @@ Welcome to my welcome page in Sharde card app
   <%= link_to "Log Out", logout_path %>
   <h1> Hello My loggin user </h1>
   <% else %>
+
   <%= link_to "Login", login_path %>
   <%= link_to "Sign Up", '/users/new', method: :get %>
 <%end%>
+

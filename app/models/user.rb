@@ -7,4 +7,12 @@ class User < ApplicationRecord
 	validates :company, presence: true
 	validates :user_name, uniqueness: true
 	#validates_uniqueness_of :first_name, scope: [:last_name, :phone_number]
+
+	before_create { generate_token(:auth_token) }
+
+	def generate_token(column)
+		begin
+			self[column] = SecureRandom.urlsafe_base64
+		end while User.exists?(column => self[column])
+	end
 end
