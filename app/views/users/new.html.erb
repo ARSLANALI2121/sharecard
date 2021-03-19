@@ -1,6 +1,9 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script src="packs/custom.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container register">
@@ -19,7 +22,7 @@
                                 <h3 class="register-heading"> HootCard Sign Up</h3>
                                 <div class="row register-form">
                                     
-                                      <%= form_with(model: @user, validate: true) do |f| %>
+                                      <%= form_with(model: @user) do |f| %>
                                         <div class="row my-form">
                                             <div class="col-10 form-group">
                                                 <%= f.text_field :user_name,  class:"form-control", placeholder:"User Name *" %>  
