@@ -2,27 +2,6 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<% if @user.errors.any? %>
-<div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-        <div class="panel panel-danger">
-            <div class="panel-heading">
-                <h2 class="panel-title">
-                    <%= pluralize(@user.errors.count, "error") %> 
-                        prohibited this user from being saved:
-                </h2>
-            <div class="panel-body">
-  <ul>
-    <% @user.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<% end %>
 
 <div class="container register">
                 <div class="row">
@@ -40,31 +19,31 @@
                                 <h3 class="register-heading"> HootCard Sign Up</h3>
                                 <div class="row register-form">
                                     
-                                      <%= form_with(model: @user) do |f| %>
+                                      <%= form_with(model: @user, validate: true) do |f| %>
                                         <div class="row my-form">
                                             <div class="col-10 form-group">
-                                                <%= f.text_field :user_name ,class:"form-control", placeholder:"User Name *" %>  
+                                                <%= f.text_field :user_name,  class:"form-control", placeholder:"User Name *" %>  
                                             </div><br>
                                             <div class="col-10 form-group">
-                                                <%= f.text_field :email ,class:"form-control", placeholder:"Your Eamil *" %>   
+                                                <%= f.text_field :email, class:"form-control", placeholder:"Your Eamil *" %>   
                                             </div><br>
                                             <div class="col-5 form-group">
-                                                <%= f.password_field :password ,class:"form-control", placeholder:"Password *" %> 
+                                                <%= f.password_field :password, class:"form-control", placeholder:"Password *" %> 
                                             </div><br>
                                             <div class="col-5 form-group">
                                                 <%= f.password_field :password_confirmation ,class:"form-control", placeholder:"Confirm Password *" %>         
                                             </div>                            
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :first_name, class:"form-control", placeholder:"First Name *" %>
+                                                <%= f.text_field :first_name ,class:"form-control", placeholder:"First Name *" %>
                                             </div>
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :last_name, class:"form-control", placeholder:" Last Name *" %>
+                                                <%= f.text_field :last_name,  class:"form-control", placeholder:" Last Name *" %>
                                             </div>
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :phone_number ,class:"form-control", placeholder:"Phone Number *" %>
+                                                <%= f.text_field :phone_number , class:"form-control", placeholder:"Phone Number *" %>
                                             </div>
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :company ,class:"form-control", placeholder:"Company Name *" %>
+                                                <%= f.text_field :company , class:"form-control", placeholder:"Company Name *" %>
                                             </div><br>
                                             <div class=" col-6 form-group">                                                                                 
                                                 <%= f.check_box :news_letter, class: "check_box_size" %>
