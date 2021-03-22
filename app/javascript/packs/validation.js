@@ -18,14 +18,15 @@ $().ready(function(){
 				}
 			},
 			messages: {
-				first_name: "Please enter your firstname",
-				last_name: " Please Enter YOUR Last Name",
-				password: {
+				"user[first_name]": "Please enter your firstname",
+				"user[last_name:]": " Please Enter YOUR Last Name",
+				"user[password:]": {
 					required: "Please provide a password",
 					minlength: "Your password must be at least 5 characters long"
 				},
-				email: "`please enter a valid email address"
+				"user[email]": "please enter a valid email address"
 			},
 
 		});	
 });
+

@@ -24,6 +24,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails', '~> 4.3'
+gem 'jquery-validation-rails'
 gem 'client_side_validations'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
