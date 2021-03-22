@@ -3,7 +3,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
-<script src="packs/custom.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container register">
@@ -22,34 +21,34 @@
                                 <h3 class="register-heading"> HootCard Sign Up</h3>
                                 <div class="row register-form">
                                     
-                                      <%= form_with(model: @user) do |f| %>
+                                      <%= form_with(model: @user, id:"registration") do |f| %>
                                         <div class="row my-form">
-                                            <div class="col-10 form-group">
-                                                <%= f.text_field :user_name,  class:"form-control", placeholder:"User Name *" %>  
+                                            <div class="col-md-10 form-group">
+                                                <%= f.text_field :user_name,  class:"form-control", placeholder:"User Name *" , required: true%>  
                                             </div><br>
-                                            <div class="col-10 form-group">
-                                                <%= f.text_field :email, class:"form-control", placeholder:"Your Eamil *" %>   
-                                            </div><br>
-                                            <div class="col-5 form-group">
-                                                <%= f.password_field :password, class:"form-control", placeholder:"Password *" %> 
+                                            <div class="col-md-10 form-group">
+                                                <%= f.text_field :email, class:"form-control", placeholder:"Your Eamil *" , required: true%>   
                                             </div><br>
                                             <div class="col-5 form-group">
-                                                <%= f.password_field :password_confirmation ,class:"form-control", placeholder:"Confirm Password *" %>         
+                                                <%= f.password_field :password, class:"form-control", placeholder:"Password *" , required: true%> 
+                                            </div><br>
+                                            <div class="col-5 form-group">
+                                                <%= f.password_field :password_confirmation ,class:"form-control", placeholder:"Confirm Password *" , required: true%>         
                                             </div>                            
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :first_name ,class:"form-control", placeholder:"First Name *" %>
+                                                <%= f.text_field :first_name ,class:"form-control", placeholder:"First Name *" , required: true%>
                                             </div>
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :last_name,  class:"form-control", placeholder:" Last Name *" %>
+                                                <%= f.text_field :last_name,  class:"form-control", placeholder:" Last Name *" , required: true%>
                                             </div>
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :phone_number , class:"form-control", placeholder:"Phone Number *" %>
+                                                <%= f.text_field :phone_number , class:"form-control", placeholder:"Phone Number *" , required: true%>
                                             </div>
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :company , class:"form-control", placeholder:"Company Name *" %>
+                                                <%= f.text_field :company , class:"form-control", placeholder:"Company Name *" , required: true%>
                                             </div><br>
                                             <div class=" col-6 form-group">                                                                                 
-                                                <%= f.check_box :news_letter, class: "check_box_size" %>
+                                                <%= f.check_box :news_letter, class: "check_box_size" , required: true%>
                                                 <%= f.label "Subscribe to our Newsletter", class:"label-class" %> 
                                             </div>                                           
                                                 <%= f.submit "Register", class:"btnRegister"%>
