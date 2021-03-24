@@ -66,29 +66,23 @@
 	}
 }
 
-@media only screen and (max-width: 48px) {
-
-	.register-right{
-		/* display: flex; */
-		/* flex-direction: column; */
-		width: 50%;
-		margin-top: 5px;
-		border: 2px solid; 
-		/* background-color: palevioletred; */
-	
+@media only screen and (max-width: 570px){
+	.register-form{
+		width: 300px;
+		margin-left: 10px;
 	}
-	.register-left{
-		flex-direction: column;
-		width: auto;
+
+	.register .register-right{
+		margin-left: 10px;
+	}
+	.register-heading{
+		margin-bottom: 5px;
 	}
 	.col-md-10{
-		width: 70% !important;
-		background-color: red;
+		width: 100% !important;
 	}
-	.register{
-		flex-direction: column;
-		width: 50%;
-		padding-left: 0%;
+	.col-md-5{
+		width: 200% !important;
 	}
 }
 
