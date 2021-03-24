@@ -5,13 +5,13 @@ class UsersController < ApplicationController
 	def index
 	end
 	def create
-		#byebug
+		byebug
 		@user= User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id
-			#flash.now[:success]= "User was successfully created."
-			format.html { redirect_to @user, notice: "User was successfully created." }
-			format.json { render :show, status: :created, location: @user }
+			flash[:success]= "User was successfully created."
+			# format.html { redirect_to @user, notice: "User was successfully created." }
+			# format.json { render :show, status: :created, location: @user }
 			redirect_to login_path
 		else
 			flash[:errors] = "User was Not created. Please Check Your Information"
@@ -23,6 +23,6 @@ class UsersController < ApplicationController
 	end
 	private 
 	def user_params
-		params.require(:user).permit(:user_name, :first_name, :last_name, :email, :check_box, :password_confirmation, :password, :phone_number, :company)
+		params.require(:user).permit(:user_name, :first_name, :last_name, :email, :password_confirmation, :password, :phone_number, :company)
 	end
 end

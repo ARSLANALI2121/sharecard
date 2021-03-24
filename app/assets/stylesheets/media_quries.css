@@ -1,4 +1,4 @@
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1200px){
 	.register-right{
 		flex-direction: column;
 		margin-top: 10px;
@@ -14,8 +14,13 @@
 		width: auto;
 		/* margin-right: 5px; */
 	}	
+	.register{
+		flex-direction: column;
+		width: auto;
+		padding-left: 0%;
+	}
 }
-@media screen and (max-width: 892px){
+@media screen and (max-width: 992px){
 	.register-right{
 		flex-direction: column;
 		margin-top: 10px;
@@ -31,11 +36,15 @@
 	.col-md-10{
 		width: 70% !important;
 		/* background-color: red; */
-
+	}
+	.register{
+		flex-direction: column;
+		width: auto;
+		padding-left: 0%;
 	}
 }
 
-@media screen and (max-width: 668px){
+@media screen and (max-width: 768px){
 	.register-left{
 		flex-direction: column;
 		/* background-color: black; */
@@ -50,14 +59,19 @@
 	.col-md-10{
 		width: 50%;
 	}
+	.register{
+		flex-direction: column;
+		width: auto;
+		padding-left: 0%;
+	}
 }
 
-@media screen and (max-width: 476px){
+@media only screen and (max-width: 48px) {
 
 	.register-right{
 		/* display: flex; */
-		flex-direction: column;
-		width: auto;
+		/* flex-direction: column; */
+		width: 50%;
 		margin-top: 5px;
 		border: 2px solid; 
 		/* background-color: palevioletred; */
@@ -69,7 +83,13 @@
 	}
 	.col-md-10{
 		width: 70% !important;
-		/* background-color: red; */
+		background-color: red;
 	}
-
+	.register{
+		flex-direction: column;
+		width: 50%;
+		padding-left: 0%;
+	}
 }
+
+

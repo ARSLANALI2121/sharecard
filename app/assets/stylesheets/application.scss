@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require media_quries
+ *= require login_page
  */
 @import 'bootstrap/scss/bootstrap';
 //@import "_bootstrap";
@@ -58,7 +59,7 @@
     // border-top-right-radius: 10% 40%;
     // border-bottom-right-radius: 10% 50%;
     // border-bottom-left-radius: 10% 50%;
-    height: auto;
+    height: 600px;
     width: auto;
     margin-right: 2px;
     margin-left: 50px;
@@ -87,6 +88,7 @@
 .register .register-form{
     padding: 10%;
     margin-top: 10%;
+    height: auto;
 }
 .btnRegister{
     float: left;
@@ -97,7 +99,7 @@
     background: #0062cc;
     color: #fff;
     font-weight: 600;
-    width: 50%;
+    width: 30%;
     cursor: pointer;
     margin-left: 10px;
 }
@@ -161,11 +163,11 @@ margin-right: 6px;
     text-align: center;
 }
 .my_btn{
-    margin-left: 12px;
+    margin-left: 120px;
     width: 100px;
     text-align: center;
 }
-.welcome{
+.welcome-right{
     width: 400px;
     height: 500px;
     float: left;

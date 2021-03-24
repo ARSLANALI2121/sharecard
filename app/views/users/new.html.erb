@@ -1,8 +1,10 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"< </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 
 <!------ Include the above in your HEAD tag ---------->
 
@@ -22,54 +24,41 @@
                                 <h3 class="register-heading"> HootCard Sign Up</h3>
                                 <div class="row register-form">
                                     
-                                      <%= form_with(model: @user) do |f| %>
-
-                                        <div class="panel panel-default">
-                                        <div class="panel-body">
-                                          <% if @user.errors.any? %>
-                                            <div id="error_expl" class="panel panel-danger">
-                                              <div class="panel-heading">
-                                                <h3 class="panel-title"><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h3>
-                                              </div>
-                                              <div class="panel-body">
-                                                <ul>
-                                                  <% @user.errors.full_messages.each do |msg| %>
-                                                      <li><%= msg %></li>
-                                                  <% end %>
-                                                </ul>
-                                              </div>
-                                            </div>
-                                          <% end %>
+                                      <%= form_with(model: @user, id:"registration-form") do |f| %>
 
                                         <div class="row my-form">
                                             <div class="col-md-10 form-group ">
-                                                <%= f.text_field :user_name,  class:"form-control", placeholder:"User Name *" , required: true%>  
+                                                <%= f.text_field :user_name,  class:"form-control required", id:"form_uname", placeholder:"User Name *"%>  
+                                                <span class="error_form" id="uname_error_message"></span>
                                             </div><br>
                                             <div class="col-md-10 form-group">
-                                                <%= f.text_field :email, class:"form-control newone", placeholder:"Your Eamil *"%>   
+                                                <%= f.text_field :email, class:"form-control required", id: "form_email", placeholder:"Your Eamil *"%> 
+                                                <span class="error_form" id="email_error_message"></span>  
                                             </div><br>
                                             <div class="col-5 form-group">
-                                                <%= f.password_field :password, class:"form-control", placeholder:"Password *" , required: true%> 
+                                                <%= f.password_field :password, class:"form-control required", id:"form_password", placeholder:"Password *"%>
+                                                <span class="error_form" id="password_error_message"></span> 
                                             </div><br>
                                             <div class="col-5 form-group">
-                                                <%= f.password_field :password_confirmation ,class:"form-control", placeholder:"Confirm Password *" , required: true%>         
+                                                <%= f.password_field :password_confirmation ,class:"form-control required", id: "form_retry_password", placeholder:"Confirm Password *" %> 
+                                                <span class="error_form" id="retry_password_error_message"></span>       
                                             </div>                            
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :first_name ,class:"form-control", placeholder:"First Name *" , required: true%>
+                                                <%= f.text_field :first_name ,class:"form-control required", id: "form_fname", placeholder:"First Name *" %>
+                                                <span class="error_form" id="fname_error_message"></span>
                                             </div>
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :last_name,  class:"form-control", placeholder:" Last Name *" , required: true%>
+                                                <%= f.text_field :last_name,  class:"form-control required", id:"form_lname" ,placeholder:" Last Name *" %>
+                                                <span class="error_form" id="lname_error_message"></span>
                                             </div>
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :phone_number , class:"form-control", placeholder:"Phone Number *" , required: true%>
+                                                <%= f.text_field :phone_number , class:"form-control required", id:"form_pnumber", placeholder:"Phone Number *" %>
+                                                <span class="error_form" id="pnumber_error_message"></span>
                                             </div>
                                             <div class="col-5 form-group">
-                                                <%= f.text_field :company , class:"form-control", placeholder:"Company Name *" , required: true%>
-                                            </div><br>
-                                            <div class=" col-6 form-group">                                                                                 
-                                                <%= f.check_box :news_letter, class: "check_box_size" , required: true%>
-                                                <%= f.label "Subscribe to our Newsletter", class:"label-class" %> 
-                                            </div>                                           
+                                                <%= f.text_field :company , class:"form-control required", id:"form_cname", placeholder:"Company Name *"%>
+                                                <span class="error_form" id="cname_error_message"></span>
+                                            </div>                                   
                                                 <%= f.submit "Register", class:"btnRegister"%>
                                             
                                             <% end %>
@@ -78,5 +67,40 @@
                             </div>
                         </div>
                     </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
+
+ <script type="text/javascript">
+
+$(function(){
+	$("#registration-form").validate({
+			rules:{
+				"user[user_name]": "required",	
+				"user[first_name]": "required",
+				"user[last_name]":	"required",
+				"user[phone_number]": "required",
+				"user[email]": {
+					required: true,
+					email: true
+				},
+				"user[password]": {
+					required: true,
+					minlength: 5
+				},
+				"user[password_confirmation]":{
+					requireed: true, equalTo: "#password"
+				}
+			},
+			messages: {
+				first_name: "Please enter your First Name",
+				last_name: " Please Enter YOUR Last Name",
+				password: {
+					required: "Please provide a password",
+					minlength: "Your password must be at least 5 characters long"
+				},
+			    email: "please enter a valid email address"
+			},
+
+		});	
+});
+</script>
