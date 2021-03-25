@@ -1,0 +1,61 @@
+
+
+
+<% if current_user %> 
+  <p1>You are Logged In as, <%= current_user.first_name %></p1>
+  <%= link_to "Log Out", logout_path %>
+<ul>
+  <li>
+    <%= @user.first_name %><br>
+    </li>
+    <li>
+    <%= @user.last_name %><br>
+    </li>
+    <li>
+    <%= @user.company %>
+  </li>
+</ul>
+  <% else %>
+
+  <%= link_to "Login", login_path %>
+  <%= link_to "Sign Up", '/users/new', method: :get %>
+<%end%>
+<%= form_with(model: @user, id:"registration-form") do |f| %>
+  <div class="row">
+      <div class="col-md-10 form-group ">
+          <%= f.text_field :user_name,  class:"form-control required", id:"form_uname", placeholder:"User Name *"%>  
+          <span class="error_form" id="uname_error_message"></span>
+      </div><br>
+      <div class="col-md-10 form-group">
+          <%= f.text_field :email, class:"form-control required", id: "form_email", placeholder:"Your Eamil *"%> 
+          <span class="error_form" id="email_error_message"></span>  
+      </div><br>
+      <div class="col-md-5 form-group">
+          <%= f.password_field :password, class:"form-control required", id:"form_password", placeholder:"Password *"%>
+          <span class="error_form" id="password_error_message"></span> 
+      </div>
+      <div class="col-md-5 form-group">
+          <%= f.password_field :password_confirmation ,class:"form-control required", id: "form_retry_password", placeholder:"Retry Password *" %> 
+          <span class="error_form" id="retry_password_error_message"></span>       
+      </div>                            
+      <div class="col-md-5 form-group">
+          <%= f.text_field :first_name ,class:"form-control required", id: "form_fname", placeholder:"First Name *" %>
+          <span class="error_form" id="fname_error_message"></span>
+      </div>
+      <div class="col-md-5 form-group">
+          <%= f.text_field :last_name,  class:"form-control required", id:"form_lname" ,placeholder:" Last Name *" %>
+          <span class="error_form" id="lname_error_message"></span>
+      </div>
+      <div class="col-md-5 form-group">
+          <%= f.text_field :phone_number , class:"form-control required", id:"form_pnumber", placeholder:"Phone Number *" %>
+          <span class="error_form" id="pnumber_error_message"></span>
+      </div>
+      <div class="col-md-5 form-group">
+          <%= f.text_field :company , class:"form-control required", id:"form_cname", placeholder:"Company Name *"%>
+          <span class="error_form" id="cname_error_message"></span>
+      </div>                                   
+          <%= f.submit "Register", class:"btnRegister"%>
+      
+      <% end %>
+  </div>
+</div>               

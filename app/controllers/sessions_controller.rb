@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 			# end
 			session[:user_id] = user.id
 			flash[:success] = " You have successfully logged in"
-			redirect_to '/welcome'
+			redirect_to edit_user_path(user)
 			#redirect_to users_path
 		else
 			flash.now[:error] = " There was something wrong with your information"

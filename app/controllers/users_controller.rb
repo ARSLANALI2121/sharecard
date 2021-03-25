@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 	def index
+		
 	end
 	def create
 		#byebug
@@ -18,7 +19,19 @@ class UsersController < ApplicationController
 			render 'new'
 		end
 	end
+	def update
+		@user = User.find(params[:id])
+		if @user.update(user_params)
+			flash[:success]= "User was successfully Updated."
+			else
+				flash[:error]= "Their is an Error is this information."
+			end
+		end
+	
 	def show
+		@user = User.find(params[:id])
+	end
+	def edit
 		@user = User.find(params[:id])
 	end
 	private 
