@@ -2,7 +2,7 @@
 <div class="row main-welcome">
 	<div class="welcome-left">
 		<h2 class="login"> Login</h2>
-			<h3 class="h3_class">Welcome Back to your HootCard Profile editor.</h3>
+			<h3 class="h3_class">Welcome Back to your ShardCard Profile editor.</h3>
 				<p class="head">	
 				Here you are able to update your virtual profile and add social media links like Facebook, Twitter, Instagram, LinkedIn, Venmo and many more. 
 				You are even able to link your appointment calendar and zoom account.
@@ -18,10 +18,6 @@
 		<div class="col-md-10 form-group">
 			<label for="exampleInputPassword1">Password</label>
 			<%= f.password_field :password ,class:"form-control", placeholder:"Password *" %> 
-		</div>
-		<div class="col-6 form-group">
-			<%= f.check_box :remember_me, {}, params[:remember_me], class: "check_box_size" %> 
-			<label>Remember Me</label>
 		</div>
 			<%= f.submit "Log In", class:"btn btn-primary my_btn" %>
 	<% end %>
