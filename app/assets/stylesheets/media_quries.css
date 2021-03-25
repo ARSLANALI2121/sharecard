@@ -33,22 +33,36 @@
 		width: 350px;
 		height: 400px;
 		margin-left: 10px;
+		border: none;
 	}
-	.main-welcome .welcome-right{
+	.welcome-right{
 		width: 350px;
 		margin-right: 20px;
-		margin-left: 10px;
-		background-color: powderblue;
-	}
-	.main-welcome .welcome-left{
-		flex-direction: column;
-		background-color: salmon;
+		margin-left: 50px;
 		width: auto;
 		height: auto;
+		border:  none;
+	}
+	.welcome-left{
+		flex-direction: column;
+		width: auto;
+		height: auto;
+		border: none;
 		
 	}
 	.title{
-		font-size: 0.9em;
+		/* font-size: 0.9em; */
+	}
+	.login{
+		/* font-family: 'Courier New', Courier, monospace; */
+		font-size: 2.5em;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.main-welcome .h3_class{
+		margin-top: 20px;
+		font-size: 1.5em;
+		border: none;
 	}
 }
 @media screen and (max-width: 992px){
@@ -62,7 +76,6 @@
 	}
 	.register-right .register-left{
 		flex-direction: column;
-		background-color: green;
 		margin-left: 5px;
 		margin-right: 5px;
 		width: 100px;
@@ -86,7 +99,6 @@
 
 	.main-welcome .welcome-left{
 		flex-direction: column;
-		background-color: red;
 		width: 450px;
 		height: 400px;
 		margin-left: 5px;
@@ -134,7 +146,6 @@
 
 	.main-welcome .welcome-left{
 		flex-direction: column;
-		background-color: red;
 		width: 450px;
 		height: 400px;
 		margin-left: 5px;
@@ -178,7 +189,6 @@
 
 	.main-welcome .welcome-left{
 		flex-direction: column;
-		background-color: yellow;
 		width: auto;
 		height: auto;
 		margin-left: 10px;
