@@ -1,46 +1,101 @@
-@media screen and (max-width: 1200px){
-	.register-right{
+@media screen and (max-width: 1280px) {
+	.register .register-right{
 		flex-direction: column;
 		margin-top: 10px;
-		width: auto;
-		margin-left: 10px;
-		/* margin-right: 5px; */
+		width: 500px;
+		margin-left: 50px;
+		/* background-color: black; */
+		margin-right: 2px;
 	
 	}
-	.register-left{
-		flex-direction: column;
-		/* background-color: yellow; */
-		margin-left: 10px;
-		width: auto;
-		/* margin-right: 5px; */
+	.register .register-left{
+		/* flex-direction: column; */
+		/* background-color: black; */
+		margin-left: 5px;
+		width: 200px;
+		margin-right: 2px;
 	}	
+
 	.register{
 		flex-direction: column;
 		width: auto;
 		padding-left: 0%;
+	}
+	.col-md-10{
+		width: 100% !important;
+		/* background-color: black; */
+	}
+	.register-right .col-md-5{
+		width: 50% !important;
+	}
+	.main-welcome{
+		flex-direction: column;
+		width: 350px;
+		height: 400px;
+		margin-left: 10px;
+	}
+	.main-welcome .welcome-right{
+		width: 350px;
+		margin-right: 20px;
+		margin-left: 10px;
+		background-color: powderblue;
+	}
+	.main-welcome .welcome-left{
+		flex-direction: column;
+		background-color: salmon;
+		width: auto;
+		height: auto;
+		
+	}
+	.title{
+		font-size: 0.9em;
 	}
 }
 @media screen and (max-width: 992px){
-	.register-right{
+	.register .register-right{
 		flex-direction: column;
 		margin-top: 10px;
-		width: auto;
+		width: 400px;
 		margin-left: 5px;
-	}
-	.register-left{
-		/* flex-direction: column; */
-		/* background-color: green; */
-		margin-left: 50px;
-		width: auto;
-	}
-	.col-md-10{
-		width: 70% !important;
+		margin-right: 5px;
 		/* background-color: red; */
 	}
-	.register{
+	.register-right .register-left{
 		flex-direction: column;
-		width: auto;
-		padding-left: 0%;
+		background-color: green;
+		margin-left: 5px;
+		margin-right: 5px;
+		width: 100px;
+	}
+	.col-md-5{
+		width: 200% !important;
+	}
+	.register-form{
+		width: 400px;
+		padding:  0px;
+	}
+	.col-md-10{
+		width: 100% !important;
+		/* background-color: red; */
+	}
+	.main-welcome{
+		flex-direction: column;
+		width: 300px;
+		height: 400px;
+	}
+
+	.main-welcome .welcome-left{
+		flex-direction: column;
+		background-color: red;
+		width: 450px;
+		height: 400px;
+		margin-left: 5px;
+		
+	}
+	.main-welcome .welcome-right{
+		flex-direction: column;
+		width: 350px;
+		margin-left: 5px;
 	}
 }
 
@@ -49,40 +104,97 @@
 		flex-direction: column;
 		/* background-color: black; */
 		width: auto;
+		margin-left: 10px;
 	}
-	.register-right{
+	.register .register-right{
 		flex-direction: column;
 		margin-top: 10px;
 		margin-left: 10px;
-		width: auto;
+		width: 350px;
+		background-color: white;
 	}
 	.col-md-10{
-		width: 50%;
+		width: 100% !important;
+		background-color: white;
+	}
+	.register-right .col-md-5 {
+		width: 200% !important;
+		/* background-color: brown; */
 	}
 	.register{
 		flex-direction: column;
 		width: auto;
 		padding-left: 0%;
 	}
-}
-
-@media only screen and (max-width: 570px){
-	.register-form{
+	.main-welcome{
+		flex-direction: column;
 		width: 300px;
-		margin-left: 10px;
+		height: 400px;
 	}
 
+	.main-welcome .welcome-left{
+		flex-direction: column;
+		background-color: red;
+		width: 450px;
+		height: 400px;
+		margin-left: 5px;
+		
+	}
+	.main-welcome .welcome-right{
+		flex-direction: column;
+		width: 350px;
+		margin-left: 5px;
+	}
+}
+
+@media screen and (max-width: 580px){
+	.register-form{
+		width: auto;
+	}
+	.register .register-left{
+		width: 250px;
+		background-color: #3931af;
+	}
 	.register .register-right{
-		margin-left: 10px;
+		padding: 10px;
+		background-color: #fff;
 	}
 	.register-heading{
 		margin-bottom: 5px;
 	}
 	.col-md-10{
 		width: 100% !important;
+		/* background-color: tomato; */
 	}
-	.col-md-5{
+	.register-right .col-md-5{
 		width: 200% !important;
+		/* background-color: violet; */
+	}
+	/* .main-welcome{
+		flex-direction: column;
+		width: 200px;
+		height: 300px;
+	} */
+
+	.main-welcome .welcome-left{
+		flex-direction: column;
+		background-color: yellow;
+		width: auto;
+		height: auto;
+		margin-left: 10px;
+		margin-right: 10px;
+		
+	}
+	.welcome-right{
+		float: left;
+		/* flex-direction: column; */
+		width: 250px;
+		height: auto;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	.welcome-left .h3_class{
+		font-size: 1.0em;
 	}
 }
 
