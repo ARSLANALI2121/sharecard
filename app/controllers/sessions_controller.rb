@@ -9,11 +9,6 @@ class SessionsController < ApplicationController
 		#byebug
 		user = User.find_by(user_name: params[:session][:user_name])
 		if user && user.authenticate(params[:session][:password])
-			# if params[:remember_me]
-			# 	cookies.permanent[:auth_token] = user.auth_token
-			# else
-			# 	cookies[:auth_token] = user.auth_token
-			# end
 			session[:user_id] = user.id
 			flash[:success] = " You have successfully logged in"
 			redirect_to edit_user_path(user)

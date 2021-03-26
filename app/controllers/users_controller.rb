@@ -27,7 +27,15 @@ class UsersController < ApplicationController
 				flash[:error]= "Their is an Error is this information."
 			end
 		end
-	
+	def delete_image
+		image = ActiveStorage::Attachment.find(params[:image_id])
+		if current_user == image.record
+			image.purge
+			redirect_back(fallback_location: request.referer)
+		else
+			redirect_to root_path, notice: " Hello Your Image is Deleted"
+		end
+	end
 	def show
 		@user = User.find(params[:id])
 	end
@@ -36,6 +44,6 @@ class UsersController < ApplicationController
 	end
 	private 
 	def user_params
-		params.require(:user).permit(:user_name, :first_name, :last_name, :email, :password_confirmation, :password, :phone_number, :company)
+		params.require(:user).permit(:user_name, :first_name, :last_name, :email, :password_confirmation, :password, :phone_number, :company, :profile_image)
 	end
 end

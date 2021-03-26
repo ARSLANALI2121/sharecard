@@ -17,7 +17,7 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-gem 'aws-sdk-s3', '~> 1.89'
+# gem 'aws-sdk-s3', '~> 1.89'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -27,7 +27,9 @@ gem 'jquery-rails', '~> 4.3'
 gem 'jquery-validation-rails'
 gem 'client_side_validations'
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 0.2.3'
+gem "aws-sdk-s3", require: false
+gem 'active_storage_validations', '~> 0.9.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
