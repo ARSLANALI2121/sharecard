@@ -8,5 +8,10 @@ class User < ApplicationRecord
 	has_one_attached :profile_image, dependent: :destroy do |attachable|
 		attachable.variant :thumb, resize: "100x100"
 	  end
+	#   def profile_image_url
+	# 	if self.profile_image.attachment
+	# 	  self.profile_image.attachment.service_url
+	# 	end
+	#   end
 
 end
