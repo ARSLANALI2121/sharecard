@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 		end
 	end
 	def update
-		byebug
+		#byebug
 		@user = User.find(params[:id])
 		if @user.update(user_params)
 			flash[:success]= "User was successfully Updated."
