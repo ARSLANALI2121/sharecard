@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 	end
 	def edit
 		# byebug
-		@user = User.find(params[:id])
+		@user = User.find_by(params[:id])
 	end
 	private 
 	def user_params
