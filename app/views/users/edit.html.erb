@@ -5,7 +5,9 @@
 <ul>
   <li>
     <%= @user.first_name %><br>
-    <%#= image_tag @user.profile_image %>
+    <% if @user.profile_photo.present? %>
+    <%= image_tag @user.profile_photo %>
+    <% end %>
     </li>
     <li>
     <%= @user.last_name %><br>
@@ -39,7 +41,7 @@
       <%= f.label "About me"%>
       <%= f.text_area :about_me, class:"form-control", placeholder:"Brief details about me",:rows => 4 %>
       <%= f.label "Profile Picture" %><br>
-      <%= f.file_field :profile_image %>
+      <%= f.file_field :profile_photo %>
     </div>
     <div class="col-md-6 ">
     <h1 class="profile-title">Contact Information</h1><br><br>
