@@ -28,9 +28,10 @@ gem 'jquery-rails', '~> 4.3'
 gem 'jquery-validation-rails'
 gem 'client_side_validations'
 # Use Active Storage variant
-gem 'image_processing', '~> 0.2.3'
+gem 'image_processing', '~> 1.12', '>= 1.12.1'
 gem "aws-sdk-s3", require: false
 gem 'active_storage_validations', '~> 0.9.2'
+gem 'mini_magick', '~> 4.11'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

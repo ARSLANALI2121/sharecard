@@ -6,7 +6,7 @@
   <li>
     <%= @user.first_name %><br>
     <% if @user.profile_photo.present? %>
-    <%= image_tag @user.profile_photo %>
+    <%= image_tag @user.profile_photo.variant(resize_to_fill: [100,100]) %>
     <% end %>
     </li>
     <li>
