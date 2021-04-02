@@ -1,0 +1,12 @@
+<div class="container">
+	<h1 class="show-user"> WellCome To User Profile </h1>
+</div>
+<div class="user-div">
+		<% @user.each do |user| %>
+			<div class="image-div">
+			 <%= image_tag user.profile_photo.variant(resize_to_fill: [100,100]), class: "image" %>
+			</div>
+			<h1 class="head-tag"> <%= user.user_name %></h1>
+			<h2 class="head-tag"> <%= user.company %></h2>
+		<% end %>
+</div>	

@@ -216,3 +216,31 @@ margin-right: 6px;
     height: 600px;
     // margin-left: 100px;
 }
+.container{
+    width: 100%;
+    height: 150px;
+    background-color: blueviolet;
+    text-align: center;
+}
+.user-div{
+    margin-left: 300px;
+}
+// .image-div{
+//     background-color: brown;
+//     width: 150px;
+//     height: 150px;
+//     margin-left: 300px;
+//     border-top-left-radius: 100% 100%;
+//     border-top-right-radius: 100% 100%;
+//     border-bottom-right-radius: 100% 100%;
+//     border-bottom-left-radius: 100% 100%;
+    
+// }
+.image{
+    border-radius: 50%;
+    margin-left: 300px;
+}
+.head-tag{
+    margin-left: 300px;
+    font-size: 1.5rem;
+}

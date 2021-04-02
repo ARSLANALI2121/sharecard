@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 	def index
-		
+		@user = User.all
 	end
 	def create
 		#byebug
