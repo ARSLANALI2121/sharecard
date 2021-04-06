@@ -177,10 +177,7 @@ margin-right: 6px;
     margin-top: 20px;
 
 }
-// .row::after{
-//     display: table;
-    
-// }
+
 .head{
     margin-top: 20px;
     text-align: left;
@@ -225,17 +222,6 @@ margin-right: 6px;
 .user-div{
     margin-left: 300px;
 }
-// .image-div{
-//     background-color: brown;
-//     width: 150px;
-//     height: 150px;
-//     margin-left: 300px;
-//     border-top-left-radius: 100% 100%;
-//     border-top-right-radius: 100% 100%;
-//     border-bottom-right-radius: 100% 100%;
-//     border-bottom-left-radius: 100% 100%;
-    
-// }
 .image{
     border-radius: 50%;
     margin-left: 300px;
@@ -243,4 +229,11 @@ margin-right: 6px;
 .head-tag{
     margin-left: 300px;
     font-size: 1.5rem;
+}
+.container-fluid{
+    margin-left: 200px;
+}
+.user-list{
+    text-align: center;
+    font-size: 1.5em;
 }

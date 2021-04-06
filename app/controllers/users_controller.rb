@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+	before_action :set_user, only: [:show, :edit, :update, :destroy]
 	def new
 		@user = User.new
 	end
@@ -21,7 +23,6 @@ class UsersController < ApplicationController
 	end
 	def update
 		#byebug
-		@user = User.find(params[:id])
 		if @user.update(user_params)
 			flash[:success]= "User was successfully Updated."
 			else
@@ -38,13 +39,18 @@ class UsersController < ApplicationController
 		end
 	end
 	def show
-		@user = User.find(params[:id])
 	end
 	def edit
 		# byebug
-		@user = User.find_by(params[:id])
+	end
+	def destroy
+		@user.destroy
+		redirect_to users_path
 	end
 	private 
+	def set_user
+		@user = User.find(params[:id])
+	end
 	def user_params
 		params.require(:user).permit(:user_name, :first_name, :last_name, :email, :password_confirmation, :password, :phone_number, :company, :profile_photo)
 	end
