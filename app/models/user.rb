@@ -14,5 +14,7 @@ class User < ApplicationRecord
 	# 	  self.profile_image.attachment.service_url
 	# 	end
 	#   end
+	# class User
+	# 	self.page: 4
 
 end

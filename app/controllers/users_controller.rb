@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
 
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+	after_action :verify_authorized, only: [:destroy, :update]
+	# after_action :verify_policy_scoped, only: :index
 	def new
 		@user = User.new
 	end
 	def index
-		@user = User.all
+		@user = policy_scope(User.all).paginate(page: params[:page], per_page: 3)
 	end
 	def create
 		#byebug
@@ -24,6 +27,7 @@ class UsersController < ApplicationController
 	def update
 		#byebug
 		if @user.update(user_params)
+			authorize @user
 			flash[:success]= "User was successfully Updated."
 			else
 				flash[:error]= "Their is an Error is this information."
@@ -45,11 +49,13 @@ class UsersController < ApplicationController
 	end
 	def destroy
 		@user.destroy
+		authorize @user
 		redirect_to users_path
 	end
 	private 
 	def set_user
 		@user = User.find(params[:id])
+		
 	end
 	def user_params
 		params.require(:user).permit(:user_name, :first_name, :last_name, :email, :password_confirmation, :password, :phone_number, :company, :profile_photo)
