@@ -34,6 +34,7 @@ gem 'active_storage_validations', '~> 0.9.2'
 gem 'mini_magick', '~> 4.11'
 gem "pundit"
 gem 'will_paginate', '~> 3.3'
+gem 'rqrcode', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

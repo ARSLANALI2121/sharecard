@@ -8,13 +8,16 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
           <%= link_to "Log Out", logout_path , class:"dropdown-item" %></a>
-          <%= link_to "Edit Profile", edit_profile_path, class:"dropdown-item" %>
-          <%= link_to "User Profile ", users_path, class:"dropdown-item" %>
-          <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          
+          <div class="dropdown-divider"></div>
+          <%= link_to "User Record ", users_path, class:"dropdown-item" %>
+          <div class="dropdown-divider"></div>
         </div>
       </li>
     </ul>
   </div>
 </nav>
+<div class="my-div">
+	<h1 class="show-user"> WellCome To User Record List </h1>
+  </div>

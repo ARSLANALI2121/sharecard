@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	after_action :verify_authorized, only: [:destroy, :update]
@@ -43,7 +42,19 @@ class UsersController < ApplicationController
 		end
 	end
 	def show
+		# byebug
+		@code = @user.code
+		if @code.present?
+		@qrcode = RQRCode::QRCode.new(@code)
+		@svg = @qrcode.as_svg(
+			offset: 0,
+			color: '000',
+			shape_rendering: 'crispEdges',
+			module_size: 6
+		)
+
 	end
+end
 	def edit
 		# byebug
 	end

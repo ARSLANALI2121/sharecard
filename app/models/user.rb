@@ -17,4 +17,12 @@ class User < ApplicationRecord
 	# class User
 	# 	self.page: 4
 
+	after_save :generate_code
+
+	def generate_code
+		unless self.code
+		 self.code = SecureRandom.hex
+		 self.save!
+		end	
+	end
 end
