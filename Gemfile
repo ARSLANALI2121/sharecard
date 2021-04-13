@@ -35,7 +35,7 @@ gem 'mini_magick', '~> 4.11'
 gem "pundit"
 gem 'will_paginate', '~> 3.3'
 gem 'rqrcode', '~> 1.2'
-gem 'pg'                            # Use postgresql as the database for Active Record
+# gem 'pg'                            # Use postgresql as the database for Active Record
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
