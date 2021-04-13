@@ -10,7 +10,7 @@ end
   end
 
   def index?
-    @current_user.role == @user
+    @current_user.role == 'admin'
   end
 
   def create?

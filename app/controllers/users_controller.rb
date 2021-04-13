@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	after_action :verify_authorized, only: [:destroy]
+	after_action :verify_policy_scoped, only: :index
 
-	# after_action :verify_authorized, only: [:create, :destroy, :edit, :new]
-	# after_action :verify_policy_scoped, only: :index
 	def new
 		@user = User.new
 	end
 	def index
+		# byebug
 		@user = policy_scope(User.all).paginate(page: params[:page], per_page: 3)
-		# authorize @user	
+		# authorize @user, :index?	
 	end
 	def create
 		#byebug
@@ -67,7 +68,7 @@ end
 	end
 	private 
 	def set_user
-		@user = User.find(params[:id])
+		@user =  User.find(params[:id])
 		
 	end
 	def user_params

@@ -20,7 +20,7 @@
                   <td><%= @user.email %></td>
                   <td><%= @user.created_at %></td>
                   <%= @svg.html_safe if @svg.present? %> 
-                <% if policy(current_user).update? %>
+                <% if policy(current_user).edit? %>
                   <td><%= link_to 'Edit', edit_user_path(@user) %>
                   <% end %>
                   </td>
