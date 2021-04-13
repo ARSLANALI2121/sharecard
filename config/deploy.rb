@@ -21,7 +21,7 @@ set :rbenv_roles, :all # default value
 
 #
 set :ssh_options, {
-    keys: %w(/home/rashidromi/pem_keys/sharecard.pem),
+    keys: %w(/Users/rapple/Downloads/sharecard.pem),
     forward_agent: true
     #  auth_methods: %w(password)
 }
@@ -34,7 +34,7 @@ ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 
 
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml}
 set :bundle_binstubs, nil
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/headshots}
 
