@@ -19,9 +19,14 @@
                   <td><%= @user.company %></td>
                   <td><%= @user.email %></td>
                   <td><%= @user.created_at %></td>
-                  <%= @svg.html_safe if @svg.present? %>                  
-                  <td><%= link_to 'Edit', edit_user_path(@user) %></td>
+                  <%= @svg.html_safe if @svg.present? %> 
+                <% if policy(current_user).update? %>
+                  <td><%= link_to 'Edit', edit_user_path(@user) %>
+                  <% end %>
+                  </td>
+                  <% if policy(current_user).destroy? %>
                   <td><%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
                 </tr>
             </tbody>
           </table>

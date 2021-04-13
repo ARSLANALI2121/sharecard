@@ -1,17 +1,14 @@
 class ApplicationController < ActionController::Base
 	include Pundit
-
+	rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+	
+	protect_from_forgery with: :exception
 	helper_method :current_user, :logged_in?
+	
 
 	def current_user
-		if session[:user_id]
-		 @current_user ||= User.find(session[:user_id])
-		#  if cookies[:auth_token]
-		#  @current_user ||= User.find_by_auth_token(cookies[:auth_token])
-		 else
-			@current_user = nil
-		 end
-	end
+		@current_user ||= User.find(session[:user_id]) if session[:user_id]
+	  end
 
 	def logged_in?
 		!!current_user
@@ -23,4 +20,9 @@ class ApplicationController < ActionController::Base
 	# 		redirect_to login_path
 	# 	end
 	# end
+	private
+	def user_not_authorized
+		flash[:alert] = "Access denied"
+		redirect_to(request.referer || root_path )
+	end
 end

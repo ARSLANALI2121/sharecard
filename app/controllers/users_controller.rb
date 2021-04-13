@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-	after_action :verify_authorized, only: [:destroy, :update]
+	# after_action :verify_authorized, only: [:create, :destroy, :edit, :new]
 	# after_action :verify_policy_scoped, only: :index
 	def new
 		@user = User.new
 	end
 	def index
 		@user = policy_scope(User.all).paginate(page: params[:page], per_page: 3)
+		# authorize @user	
 	end
 	def create
 		#byebug
@@ -45,7 +46,8 @@ class UsersController < ApplicationController
 		# byebug
 		@code = @user.code
 		if @code.present?
-		@qrcode = RQRCode::QRCode.new(@code)
+		@qrcode = RQRCode::QRCode.new("http://localhost:3000/users/3")
+			# [:user_name, :email, :last_name, :first_name])
 		@svg = @qrcode.as_svg(
 			offset: 0,
 			color: '000',
