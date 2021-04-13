@@ -25,4 +25,11 @@ class User < ApplicationRecord
 		 self.save!
 		end	
 	end
+
+	enum role: [:member, :admin]
+	after_initialize do 
+	  if self.new_record?
+		self.role ||= :member
+	  end
+	end
 end
