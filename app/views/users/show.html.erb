@@ -4,11 +4,13 @@
             <thead  class="thead-light">
               <tr>
                 <th>Name</th>
-				<th>User Name</th>
+				        <th>User Name</th>
                 <th>Company Name</th>
                 <th>Email Address</th>
-				<th>Created At</th>
+				        <th>Created At</th>
+                <th> Social Media </th>
                 <th colspan="3"></th>
+               
               </tr>
             </thead>
 
@@ -19,8 +21,9 @@
                   <td><%= @user.company %></td>
                   <td><%= @user.email %></td>
                   <td><%= @user.created_at %></td>
+                  <td><%= link_to "Social Media", @user.social_media %></td>
                   <%= @svg.html_safe if @svg.present? %> 
-                <% if policy(current_user).edit? %>
+                <% if current_user && current_user == @user %>
                   <td><%= link_to 'Edit', edit_user_path(@user) %>
                   <% end %>
                   </td>

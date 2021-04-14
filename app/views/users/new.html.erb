@@ -57,7 +57,11 @@
                                             <div class="col-md-5 form-group">
                                                 <%= f.text_field :company , class:"form-control required", id:"form_cname", placeholder:"Company Name *"%>
                                                 <span class="error_form" id="cname_error_message"></span>
-                                            </div>                                   
+                                            </div>       
+                                            <div class="col-md-10 form-group">
+                                            <%= f.text_field :social_media , class:"form-control required", id:"form_cname", placeholder:"enter your social media link "%>
+                                            <span class="error_form" id="cname_error_message"></span>
+                                            </div>                            
                                                 <%= f.submit "Register", class:"btnRegister"%>
                                             
                                             <% end %>
