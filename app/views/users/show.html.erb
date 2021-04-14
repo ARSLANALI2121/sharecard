@@ -21,7 +21,7 @@
                   <td><%= @user.company %></td>
                   <td><%= @user.email %></td>
                   <td><%= @user.created_at %></td>
-                  <td><%= link_to "Social Media", @user.social_media %></td>
+                  <td><%= link_to "Social Media",@user.social_media %></td>
                   <%= @svg.html_safe if @svg.present? %> 
                 <% if current_user && current_user == @user %>
                   <td><%= link_to 'Edit', edit_user_path(@user) %>
