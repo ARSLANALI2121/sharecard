@@ -8,27 +8,37 @@ class UsersController < ApplicationController
 	end
 	def index
 		# byebug
-		@user = policy_scope(User.all).paginate(page: params[:page], per_page: 3)
+		@user = policy_scope(User.all).paginate(page: params[:page], per_page: 7)
 		# authorize @user, :index?	
 	end
 	def create
 		#byebug
 		@user= User.new(user_params)
 		if @user.save
-			session[:user_id] = @user.id
-			flash[:success]= "User was successfully created."
-			# format.html { redirect_to @user, notice: "User was successfully created." }
-			# format.json { render :show, status: :created, location: @user }
+			UserMailer.registration_confirmation(@user).deliver
+			# session[:user_id] = @user.id
+			flash[:success]= " User was successfully created. Please confirm your email address."
 			redirect_to login_path
 		else
 			flash[:errors] = "User was Not created. Please Check Your Information"
 			render 'new'
 		end
 	end
+	def confirm_email
+		
+		user = User.find_by_confirm_token(params[:id])
+		# byebug
+			user.email_activate
+			flash[:success] = 'Welcome to Share Card App! Your Account has now been confirmed'
+			redirect_to login_path
+			# else
+			# 	flash[:error] = 'Error User does not exist.'
+			# 	redirect_to root_url
+			# end
+		end
 	def update
 		#byebug
 		if @user.update(user_params)
-			authorize @user
 			flash[:success]= "User was successfully Updated."
 			else
 				flash[:error]= "Their is an Error is this information."
@@ -72,6 +82,6 @@ end
 		
 	end
 	def user_params
-		params.require(:user).permit(:user_name, :first_name, :last_name, :email, :password_confirmation, :password, :phone_number, :company, :profile_photo, :social_media)
+		params.require(:user).permit(:user_name, :first_name, :last_name, :email, :password_confirmation, :password, :phone_number, :company, :profile_photo, :social_media, :about_me, :confirm_token, :email_confirmed)
 	end
 end

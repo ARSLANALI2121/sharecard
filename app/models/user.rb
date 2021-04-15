@@ -3,7 +3,7 @@ class User < ApplicationRecord
 	# validates :user_name, presence: true, length: {minimum:3, maximum: 10 }
 	# validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/ }, presence: true
 	# validates :last_name, :first_name, :phone_number, :company, :news_letter, presence: true
-	
+	before_create :confirmation_token
 	validates :profile_photo, content_type: [:png, :jpg, :jpeg]
 	has_one_attached :profile_photo
 	# , dependent: :destroy do |attachable|
@@ -32,4 +32,15 @@ class User < ApplicationRecord
 		self.role ||= :member
 	  end
 	end
+	def email_activate
+		self.email_confirmed = true
+		self.confirm_token = nil
+		save!(:validate => false)
+	end
+	private
+	def confirmation_token
+		if self.confirm_token.blank?
+			self.confirm_token = SecureRandom.urlsafe_base64.to_s
+			end
+		end
 end

@@ -27,41 +27,26 @@
                                       <%= form_with(model: @user, id:"registration-form") do |f| %>
                                         <div class="row">
                                             <div class="col-md-10 form-group ">
-                                                <%= f.text_field :user_name,  class:"form-control required", id:"form_uname", placeholder:"User Name *"%>  
+                                                <%= f.text_field :first_name,  class:"form-control required", id:"form_uname", placeholder:"First Name *"%>  
                                                 <span class="error_form" id="uname_error_message"></span>
                                             </div><br>
+                                            <div class="col-md-10 form-group">
+                                                <%= f.text_field :last_name,  class:"form-control required", id:"form_lname" ,placeholder:" Last Name *" %>
+                                                <span class="error_form" id="lname_error_message"></span>
+                                            </div> 
                                             <div class="col-md-10 form-group">
                                                 <%= f.text_field :email, class:"form-control required", id: "form_email", placeholder:"Your Eamil *"%> 
                                                 <span class="error_form" id="email_error_message"></span>  
                                             </div><br>
-                                            <div class="col-md-5 form-group">
+                                            <div class="col-md-10 form-group">
                                                 <%= f.password_field :password, class:"form-control required", id:"form_password", placeholder:"Password *"%>
                                                 <span class="error_form" id="password_error_message"></span> 
                                             </div>
-                                            <div class="col-md-5 form-group">
+                                            <div class="col-md-10 form-group">
                                                 <%= f.password_field :password_confirmation ,class:"form-control required", id: "form_retry_password", placeholder:"Retry Password *" %> 
                                                 <span class="error_form" id="retry_password_error_message"></span>       
                                             </div>                            
-                                            <div class="col-md-5 form-group">
-                                                <%= f.text_field :first_name ,class:"form-control required", id: "form_fname", placeholder:"First Name *" %>
-                                                <span class="error_form" id="fname_error_message"></span>
-                                            </div>
-                                            <div class="col-md-5 form-group">
-                                                <%= f.text_field :last_name,  class:"form-control required", id:"form_lname" ,placeholder:" Last Name *" %>
-                                                <span class="error_form" id="lname_error_message"></span>
-                                            </div>
-                                            <div class="col-md-5 form-group">
-                                                <%= f.text_field :phone_number , class:"form-control required", id:"form_pnumber", placeholder:"Phone Number *" %>
-                                                <span class="error_form" id="pnumber_error_message"></span>
-                                            </div>
-                                            <div class="col-md-5 form-group">
-                                                <%= f.text_field :company , class:"form-control required", id:"form_cname", placeholder:"Company Name *"%>
-                                                <span class="error_form" id="cname_error_message"></span>
-                                            </div>       
-                                            <div class="col-md-10 form-group">
-                                            <%= f.text_field :social_media , class:"form-control required", id:"form_cname", placeholder:"enter your social media link "%>
-                                            <span class="error_form" id="cname_error_message"></span>
-                                            </div>                            
+
                                                 <%= f.submit "Register", class:"btnRegister"%>
                                             
                                             <% end %>
