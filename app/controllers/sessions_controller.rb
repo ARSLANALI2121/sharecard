@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
 		# byebug
 		user = User.find_by(email: params[:session][:email])
 		if user && user.authenticate(params[:session][:password])
-			if user.email_confirmed
+			unless user.email_confirmed
+				
 				session[:user_id] = user.id
 				flash[:success] = " You have successfully logged in"
 				redirect_to edit_user_path(user)

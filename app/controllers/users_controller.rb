@@ -82,6 +82,7 @@ end
 		
 	end
 	def user_params
-		params.require(:user).permit(:user_name, :first_name, :last_name, :email, :password_confirmation, :password, :phone_number, :company, :profile_photo, :social_media, :about_me, :confirm_token, :email_confirmed)
+		params.require(:user).permit(:user_name, :first_name, :last_name, :email, :password_confirmation, :password, :phone_number, :company, :profile_photo, :social_media, :about_me) 
+		# , :confirm_token, :email_confirmed
 	end
 end
